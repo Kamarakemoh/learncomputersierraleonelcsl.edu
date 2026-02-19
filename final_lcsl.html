@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Computer Sierra Leone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#3b82f6',
+                        accent: '#60a5fa'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            min-height: 90vh;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(30, 64, 175, 0.8), rgba(59, 130, 246, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231e40af"/><circle cx="20" cy="20" r="3" fill="%233b82f6" opacity="0.3"/><circle cx="50" cy="50" r="5" fill="%233b82f6" opacity="0.3"/><circle cx="80" cy="80" r="4" fill="%233b82f6" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .image-gallery img {
+            transition: transform 0.3s ease;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+        .logo-image {
+            max-height: 50px;
+            max-width: 50px;
+            border-radius: 50%;
+        }
+        .navbar-button {
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .navbar-button:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #60a5fa;
+        }
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+        .section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Header -->
+    <header class="bg-primary shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white rounded-full p-2">
+                    <img src="image/lcsl.jpg" alt="Learn Computer Sierra Leone Logo" class="logo-image">
+                </div>
+                <h1 class="text-2xl font-bold">Learn Computer Sierra Leone</h1>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <button class="navbar-button hover:text-accent transition duration-300" data-target="home">Home</button>
+                <button class="navbar-button hover:text-accent transition duration-300" data-target="about">About</button>
+                <button class="navbar-button hover:text-accent transition duration-300" data-target="programs">Programs</button>
+                <button class="navbar-button hover:text-accent transition duration-300" data-target="gallery">Gallery</button>
+                <button class="navbar-button hover:text-accent transition duration-300" data-target="contact">Contact</button>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="mobile-menu bg-primary">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-3">
+                <button class="navbar-button text-left hover:text-accent transition duration-300" data-target="home">Home</button>
+                <button class="navbar-button text-left hover:text-accent transition duration-300" data-target="about">About</button>
+                <button class="navbar-button text-left hover:text-accent transition duration-300" data-target="programs">Programs</button>
+                <button class="navbar-button text-left hover:text-accent transition duration-300" data-target="gallery">Gallery</button>
+                <button class="navbar-button text-left hover:text-accent transition duration-300" data-target="contact">Contact</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section py-20 pt-32">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">Motto:Building Sierra Leone Through Tech</h1>
+                <p class="text-xl md:text-2xl mb-8 fade-in delay-100">Empowering Children with Digital Skills for Tomorrow's Opportunities</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in delay-200">
+                    <button class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                        Join Our Program
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-blue-900 section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Us</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Helping Children Learn Computers for Free</h3>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        Learn Computer Sierra Leone is a non-governmental organization dedicated to bridging the digital divide in Sierra Leone. 
+                        We provide free computer education to children in underserved communities, giving them the skills they need to succeed 
+                        in our increasingly digital world.
+                    </p>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        Our programs focus on teaching fundamental computer literacy, and digital skills that empower 
+                        children to become future leaders in technology and innovation as we work with both Primary and secondary schools.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-8">
+                        <div class="bg-white bg-opacity-20 p-4 rounded-full">
+                            <i class="fas fa-users text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl">1000+ Students</h4>
+                            <p>Are Benefiting from our programs</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="fade-in delay-100">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6">
+                       <img src="image/15.jpg" 
+                             alt="Children learning computers" 
+                             class="w-full h-auto rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Programs</h2>
+                <p class="text-xl max-w-2xl mx-auto">Comprehensive Computer Education Programs for Children</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card bg-primary bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-opacity-30 transition duration-300">
+                    <div class="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-laptop-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Computer Literacy</h3>
+                    <p>Basic computer skills including hardware, software, and internet usage for children of all ages.</p>
+                </div>
+                
+                <div class="feature-card bg-primary bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-opacity-30 transition duration-300">
+                    <div class="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-school text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">School Partnerships</h3>
+                    <p>Collaborating with local schools to integrate computer education into their curriculum.</p>
+                </div>
+                 <div class="feature-card bg-primary bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-opacity-30 transition duration-300">
+                    <div class="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Community Centers</h3>
+                    <p>We are currently working on opening centers in less privileged communities so that we can widen out computer literacy. Since this is a self-founded project we are looking for sponsors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-blue-900 section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Impact</h2>
+                <p class="text-xl max-w-2xl mx-auto">Photos from Our Computer Education Programs</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 image-gallery">
+                <div class="rounded-xl overflow-hidden shadow-lg">
+                    <img src="image/6.jpg" 
+                         alt="African children learning computers" 
+                         class="w-full h-64 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-lg">
+                    <img src="image/16.jpg" 
+                         alt="Children working on computers" 
+                         class="w-full h-64 object-cover">
+                </div>
+                
+                <div class="rounded-xl overflow-hidden shadow-lg">
+                    <img src="image/5.jpg" 
+                         alt="Group of children learning together" 
+                         class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+                <p class="text-xl max-w-2xl mx-auto">Get in touch with us for more information</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold mb-6">Office Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mt-1">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Address</h4>
+                                <p>12 Harding Street, Rokupa Wellington, Freetown, Sierra Leone</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mt-1">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Phone</h4>
+                                <p>+232 75 580 333 / +232 88 352 851</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mt-1">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email</h4>
+                                <p>learncomputersierraleonelcsl@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mt-1">
+                                <i class="fas fa-globe text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Website</h4>
+                                <p>www.lcsl.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in delay-100">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6 text-center">Send us a Message</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <input type="text" placeholder="Your Name" class="w-full p-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-secondary">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Your Email" class="w-full p-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-secondary">
+                            </div>
+                            <div>
+                                <textarea placeholder="Your Message" rows="4" class="w-full p-4 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-secondary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-primary bg-opacity-20 backdrop-blur-sm rounded-2xl p-6">
+                    <div class="text-4xl font-bold text-secondary mb-2">500+</div>
+                    <p>Children Taught</p>
+                </div>
+                <div class="bg-primary bg-opacity-20 backdrop-blur-sm rounded-2xl p-6">
+                    <div class="text-4xl font-bold text-secondary mb-2">25+</div>
+                    <p>School Partnerships</p>
+                </div>
+                <div class="bg-primary bg-opacity-20 backdrop-blur-sm rounded-2xl p-6">
+                    <div class="text-4xl font-bold text-secondary mb-2">Currently looking for sponsors</div>
+                    <p>Community Centers</p>
+                </div>
+                <div class="bg-primary bg-opacity-20 backdrop-blur-sm rounded-2xl p-6">
+                    <div class="text-4xl font-bold text-secondary mb-2">100%</div>
+                    <p>Free Education</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-8">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="bg-white rounded-full p-2">
+                    <img src="image/lcsl.jpg" alt="Learn Computer Sierra Leone Logo" class="logo-image">                    </div>
+                    <h2 class="text-2xl font-bold">Learn Computer Sierra Leone</h2>
+                </div>
+                <p class="text-lg max-w-2xl mx-auto">
+                    Building Sierra Leone Through Technology - Empowering Children with Digital Skills for a Better Future
+                </p>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-8">
+                <p class="text-lg">Contact Us +23275580333/+23288352851</p>
+                <p class="text-lg">Email: learncomputersierraleonelcsl@gmail.com</p>   
+                <p class="text-lg">www.lcsl.com</p>
+                <p class="mt-4 text-blue-200">&copy; 2026 Learn Computer Sierra Leone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navButtons = document.querySelectorAll('[data-target]');
+            
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Smooth scrolling for navigation buttons
+            navButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (mobileMenu.classList.contains('active')) {
+                            mobileMenu.classList.remove('active');
+                        }
+                    }
+                });
+            });
+            
+            // Add active class to current section in viewport
+            const sections = document.querySelectorAll('.section');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= (sectionTop - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navButtons.forEach(button => {
+                    button.classList.remove('text-accent');
+                    if (button.getAttribute('data-target') === current) {
+                        button.classList.add('text-accent');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
